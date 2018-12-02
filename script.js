@@ -31,6 +31,7 @@ const cardsArray = [{
    'img' : 'Images/invader7.png',
 },
 ];
+function startGame() {
 let gameBoard = cardsArray
 .concat(cardsArray)
 .sort(() => 0.5 - Math.random());;
@@ -44,15 +45,21 @@ gameBoard.forEach(item => {
    const card = document.createElement('div');
    card.classList.add('card');
    card.dataset.name = item.id;
-
-  const front = document.createElement('div');
-  front.classList.add('front');
-  card.style.cardValue = `url(${item.img})`;
-
-  const back = document.createElement('div');
-  back.classList.add('back');
-
-  grid.appendChild(card);
-  card.appendChild(front);
-  card.appendChild(back);
+   
+   const back = document.createElement('div');
+   back.classList.add('back');
+   
+   const front = document.createElement('div');
+   front.classList.add('front');
+   card.style.cardValue = `url(${item.img})`;
+   
+   
+   grid.appendChild(card);
+   card.appendChild(back);
+   card.appendChild(front);
 });
+};
+
+window.onload = startGame();
+const button = document.getElementById('button');
+
