@@ -1,9 +1,9 @@
 .button {
 	position: relative;
-	width:220px;
-	height:40px;
+	width:70px;
+	height:70px;
 	text-align:center;
-	color:#FFF;
+	color:#000000;
 	text-decoration:none;
 	line-height:43px;
 	font-family:'Oswald', Helvetica;
@@ -11,42 +11,35 @@
 	margin: 30px;
 }
 .button:before {
-	background:#f0f0f0;
-	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D0D0D0), to(#f0f0f0));
-
-border-radius:5px;
-
-	box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
-
+	background:#891717;
+	border-radius:50px;
+	box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #600d0d;
 	position: absolute;
 	content: "";
 	left: -6px; right: -6px;
-	top: -6px; bottom: -10px;
+	top: -2px; bottom: -10px;
 	z-index: -1;
 }
 
 .button:active {
 	top:5px;
+	box-shadow: none;
 }
 .button:active:before{
-	top: -11px;
+	top: -6px;
 	bottom: -5px;
 	content: "";
 }
 
 .red {
-	text-shadow:-1px -1px 0 #A84155;
-	background: #D25068;
-	border:1px solid #D25068;
-
-	background-image:linear-gradient(to bottom, #F66C7B, #D25068);
-
-   border-radius:5px;
-
-	box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+	background: rgb(134, 17, 39);
+	border:1px solid #841616;
+	background-image:radial-gradient(#c12626, #b21111);
+   border-radius:50px;
+	box-shadow:0 1px 0 rgba(163, 102, 102, .5) inset, 0 -1px 0 rgba(163, 102, 102, .1) inset, 0 4px 0 #600d0d, 0 4px 2px rgba(0, 0, 0, .5);
 }
 
 .red:hover {
-	background: #F66C7B;
-	background-image:linear-gradient(top, #D25068, #F66C7B);
+	background: #d62c2c;
+	background-image:radial-gradient( #a82121, #8c0e0e);
 }
