@@ -60,38 +60,32 @@ gameBoard.forEach(item => {
    card.appendChild(front);
 });
 
-const match = () => {
-   var selected = document.querySelectorAll('.selected');
-   selected.forEach(card => {
-      card.classList.add('match');
-   });
-}
-
 
 /* vv Flips cards, check for match, if matched add class "disabled", if not matched flips cards back vv */
 const cards = document.querySelectorAll('.card');
 
 let selected = false;
+let lockBoard = false;
 let firstGuess, secondGuess;
-let count = 0;
 
+/* Flip two cards and send in to compare function */
 function flipCard() {
+   if (lockBoard) return;
+   if (this === firstGuess) return;
+
   this.classList.add('active');
-   if (count < 2){
-      count++;
-      if (!selected) {
-         selected = true;
-         firstGuess = this;
-         return;
-      }
+   if (!selected) {
+      selected = true;
+      firstGuess = this;
+      return;
+   }
 
    secondGuess = this;
-   selected = false;
   
-   
    checkMatch()
    }
-}
+
+/* Compare chosen set of cards according to name */
 function checkMatch() {
    if (firstGuess.dataset.name === secondGuess.dataset.name) {
       disableCards();
@@ -101,19 +95,31 @@ function checkMatch() {
    restoreCards();
 }
 
+/* If set does match disable cards and reset board */
 function disableCards() {
    firstGuess.removeEventListener('click', flipCard);
    firstGuess.classList.add('disabled');
    secondGuess.removeEventListener('click', flipCard);
    secondGuess.classList.add('disabled');
+   
+   resetBoard();
 }
 
+/* If compard set does not match, flip cards back to original state and reset previous selection*/
 function restoreCards() {
+      lockBoard = true;
    setTimeout(() => {
       firstGuess.classList.remove('active');
       secondGuess.classList.remove('active');
+      resetBoard();
    }, 1500);
    
+}
+
+/* Resets board from previous selection to allow all cards (not matched/disabled cards) to be selected again */
+function resetBoard() {
+   [selected, lockBoard] = [false, false];
+   [firstGuess, secondGuess] = [null, null];
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
