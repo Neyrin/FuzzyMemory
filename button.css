@@ -1,4 +1,4 @@
-.push_button {
+.button {
 	position: relative;
 	width:220px;
 	height:40px;
@@ -10,7 +10,7 @@
 	display: block;
 	margin: 30px;
 }
-.push_button:before {
+.button:before {
 	background:#f0f0f0;
 	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D0D0D0), to(#f0f0f0));
 
@@ -25,10 +25,10 @@ border-radius:5px;
 	z-index: -1;
 }
 
-.push_button:active {
+.button:active {
 	top:5px;
 }
-.push_button:active:before{
+.button:active:before{
 	top: -11px;
 	bottom: -5px;
 	content: "";
