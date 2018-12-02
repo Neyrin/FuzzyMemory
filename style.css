@@ -13,7 +13,7 @@ body {
    flex-wrap: wrap;
    margin: auto;
    justify-content: space-between;
-   perspective: 600px;
+   perspective: 2000px;
 }
 
 .back,
@@ -29,7 +29,7 @@ body {
    transform-style: preserve-3d;
 }
 
-.flip {
+.active {
    transform: rotateY(180deg);
 }
 
@@ -42,7 +42,6 @@ body {
 
 .front {
    transform: rotateY(180deg);
-   background-color: none;
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center center;
@@ -53,11 +52,11 @@ body {
    background: #000000 url('Images/space-invaders.png');
 }
 
-.active {
-   transform: rotateY(180deg);
+.disabled .back {
+   background: #000000 !important;
+   
 }
 
-/* .match .front {
-background: #6589F9 !important;
-} */
+
+
 
