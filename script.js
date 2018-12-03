@@ -34,9 +34,6 @@ const cardsArray = [{
 let gameBoard = cardsArray
 .concat(cardsArray)
 .sort(() => 0.5 - Math.random());;
-let deck;
-let card;
-let grid;
 
 
 function startGame(gameBoard) {
@@ -143,7 +140,7 @@ function restartGame() {
    let gameBoard = cardsArray
    .concat(cardsArray)
    .sort(() => 0.5 - Math.random());;
+   
 /* Calls the function wich creates the grid and cards */
    startGame(gameBoard);
-
 };
