@@ -1,4 +1,4 @@
-##Introduction
+## Introduction
 JavaScript school-project for WU18 @Yrgo
 Design a functional Memory-game, meeting certain requirement.
 
@@ -14,7 +14,7 @@ Design a functional Memory-game, meeting certain requirement.
 - [ ] Must be tested on 2 classmates computers
 - [ ] Must contain README.md, .editorconfig and LICENSE files
 
-##Installation
+## Installation
 To view the game either download the [zip-file](https://github.com/Neyrin/FuzzyMemory/archive/master.zip) or clone the [repo](https://github.com/Neyrin/FuzzyMemory.git) using
 terminal
 ```bash
