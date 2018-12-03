@@ -128,63 +128,22 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 /* ^^ Flips cards, check for match, if matched add class "disabled", if not matched flips cards back ^^ */
 
 };
-
+/* Initial load in window */
 window.addEventListener("load", () => {
    startGame(gameBoard);
 });
 
+/* Restart game function that resets all classes */
 function restartGame() {
    var game = document.getElementById("deck");
    while (game.firstChild) {
       game.removeChild(game.firstChild);
 }
+/* Reshuffles the cards */
    let gameBoard = cardsArray
    .concat(cardsArray)
    .sort(() => 0.5 - Math.random());;
-
+/* Calls the function wich creates the grid and cards */
    startGame(gameBoard);
 
 };
-
-
-
-
-
-
-
-
-
-/* function startGame() {
-   game = createGame();
-   for (var i = 0; i < gameBoard.length; i++){
-      deck.innerHTML = "";
-      [].forEach.call(card, function(item) {
-         deck.appendChild(item);
-      });
-      card[i].classList.remove("show", "open", "match", "disabled");
-   }
-}; */
-
-/* window.onload = createGame();
-   /* grid.addEventListener('click', function (event) {
-
-      let clicked = event.target;
-
-      if (clicked.nodeName === 'SECTION') { return; }
-
-      if (count < 2) {
-         count++;
-         if (count === 1) {
-            firstGuess = clicked.dataset. name;
-            clicked.classList.add('selected');
-         } else {
-            secondGuess = clicked.dataset.name;
-            clicked.classList.add('selected');
-         }
-         if (firstGuess !== '' && secondGuess !== '') {
-            if (firstGuess === secondGuess) {
-               match();
-            }
-         }
-      }
-   }); */
