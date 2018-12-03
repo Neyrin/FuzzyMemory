@@ -21,3 +21,19 @@ terminal
 $ git clone https://github.com/Neyrin/FuzzyMemory.git
 ```
 and then open the index.html file in a browser of your choice.
+
+## About
+
+###### Tested by
+- [ ] name
+- [ ] name
+
+###### Tested on
+- [ ] Firefox
+- [ ] Chrome
+- [ ] Brave
+
+##### Backlog
+* Timer
+* Background animations
+* Difficulty settings
